@@ -1,5 +1,6 @@
 //{ Driver Code Starts
 // Initial Template for C++
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -8,30 +9,35 @@ using namespace std;
 // User function Template for C++
 class Solution {
   public:
-    string revStr(string s) {
+    string reverseString(string& s) {
         // code here
-        // int n = s.length();
-        // int i=0,j=n-1;
+        int n = s.length();       ////// O(n)  tc
+        int i=0,j=n-1;
         
-        // while(i<=j){
-        //     swap(s[i++], s[j--]);
-        // }
+        while(i<=j){
+            swap(s[i++], s[j--]);
+        }
         
-        reverse(s.begin(), s.end());
+        // reverse(s.begin(), s.end());    ///// O(n) tc
         return s;
     }
 };
 
+
 //{ Driver Code Starts.
+
 int main() {
+
     int t;
     cin >> t;
     while (t--) {
         string s;
         cin >> s;
         Solution ob;
-        cout << ob.revStr(s) << endl;
-        cout << "~" << endl;
+        cout << ob.reverseString(s) << endl;
+
+        cout << "~"
+             << "\n";
     }
     return 0;
 }
