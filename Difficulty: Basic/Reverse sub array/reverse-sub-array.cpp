@@ -9,7 +9,55 @@ class Solution {
   public:
     vector<int> reverseSubArray(vector<int> &arr, int l, int r) {
         // code here
-        int left = l - 1; // 0-based indexing
+        
+        int left = l-1, right = r-1;
+        
+        while(left < right){
+            swap(arr[left++], arr[right--]);
+        }
+        return arr;
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+int left = l - 1; // 0-based indexing
     int right = r - 1;
 
     while (left < right) {
@@ -19,9 +67,8 @@ class Solution {
     }
 
     return arr;
-        
-    }
-};
+    
+    */
 
 //{ Driver Code Starts.
 
