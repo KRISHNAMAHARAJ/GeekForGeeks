@@ -43,7 +43,7 @@ long long lcm(int a, int b)
 
 
 
-/////////USING IN-BUILT FUNCTIONS //////////
+/////////USING IN-BUILT FUNCTIONS //////////it uses internally euclidean algo.
 
 //       cout << "The gcd of a and b is " << __gcd(a, b) << endl;
 
@@ -95,6 +95,90 @@ long long lcm(int a, int b)
     }
 */
 
+
+
+
+////////////// Function to return LCM of two numbers////////
+/*
+
+int LCM(int a, int b)
+{
+    int greater = max(a, b);
+    int smallest = min(a, b);
+    for (int i = greater; ; i += greater) {
+        if (i % smallest  == 0)
+            return i;
+    }
+}
+
+*/
+
+
+
+
+
+//////////////// GCD of More than 2 Numbers ///////
+/*
+
+// Function to return gcd of a and b
+int gcd(int a, int b)
+{
+  if (a == 0)
+    return b;                 
+  return gcd(b % a, a);
+}
+
+// Function to find gcd of array of
+// numbers
+int findGCD(int arr[], int n)
+{
+  int result = arr[0];
+  for (int i = 1; i < n; i++)
+  {
+    result = gcd(arr[i], result);     //// __gcd(a,b)  //// using In-built Functions
+
+    if(result == 1)
+    {
+    return 1;
+    }
+  }
+  return result;
+}
+
+
+*/
+
+
+
+
+///////////// LCM of More than 2 Numbers ///////
+/*
+
+// Utility function to find
+// GCD of 'a' and 'b'
+int gcd(int a, int b)
+{
+    if (b == 0)
+        return a;
+    return gcd(b, a % b);
+}
+
+// Returns LCM of array elements
+ll findlcm(int arr[], int n)
+{
+    // Initialize result
+    ll ans = arr[0];
+
+    // ans contains LCM of arr[0], ..arr[i]
+    // after i'th iteration,
+    for (int i = 1; i < n; i++)
+        ans = (((arr[i] * ans)) /
+                (gcd(arr[i], ans)));
+
+    return ans;
+}
+
+*/
 
 
 //{ Driver Code Starts.
