@@ -8,9 +8,16 @@ class Solution {
   public:
     void reverseArray(vector<int> &arr) {
         // code here
-        reverse(arr.begin(), arr.end());
+        int n=arr.size();
+        int i=0;
+        int j=n-1;
+        while(i<j) {
+            swap(arr[i++], arr[j--]);
+        }
     }
 };
+
+///////   reverse(arr.begin(), arr.end());
 
 //{ Driver Code Starts.
 int main() {
