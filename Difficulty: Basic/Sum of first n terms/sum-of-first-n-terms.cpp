@@ -11,10 +11,22 @@ class Solution {
   public:
     int sumOfSeries(int n) {
         // code here
-        int result = (pow(n,2) * pow(n+1,2))/4;
-        return result;
+        int result = (n * (n+1))/2;
+        return result * result;
     }
 };
+
+///////USING RECURSION it takes O(n) tc and O(n) sc. 
+/*
+    int sumOfSeries(int n) {
+        // code here
+        if(n==1){
+            return 1;
+        }
+        return n*n*n + sumOfSeries(n-1);
+    }
+*/
+
 
 //{ Driver Code Starts.
 int main() {
