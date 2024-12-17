@@ -28,6 +28,45 @@ class Solution {
     }
 };
 
+//////// above code taking O(n.logn) time and O(n) space
+
+
+//////// By Using Boyer-Moore Voting Algorithm we can do in O(n) tc and O(1) sc.
+/*
+
+    int majorityElement(vector<int>& arr) {
+    int candidate = -1, count = 0;
+
+    // Step 1: Finding the candidate
+    for(int num : arr) {
+        if(count == 0) {
+            candidate = num;
+        }
+        if(num == candidate) {
+            count++;
+        } else {
+            count--;
+        }
+    }
+
+    // Step 2: Validate the candidate (only required if the problem doesn't guarantee a majority element)
+    count = 0;
+    for(int num : arr) {
+        if(num == candidate) {
+            count++;
+        }
+    }
+
+    if(count > arr.size() / 2) {
+        return candidate;
+    }
+    
+    return -1; // No majority element found
+}
+
+
+*/
+
 //{ Driver Code Starts.
 
 int main() {
