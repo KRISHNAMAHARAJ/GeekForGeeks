@@ -13,11 +13,10 @@ class Solution {
         // code here
         
         int m = mat.size();
-        int n= mat[0].size();
+        int n= mat[0].size();  
+                                     //// TC:- O(m*logn) SC:- O(1)
         
-        int i =0;
-        
-        while(i < m){
+        for(int i=0; i<m; i++){
             
             int j=0, k= n-1;
             
@@ -34,7 +33,6 @@ class Solution {
                     k = mid-1;
                 }
             }
-            i++;
         }
         return false;
     }
