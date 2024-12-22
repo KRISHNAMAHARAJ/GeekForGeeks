@@ -38,6 +38,38 @@ class Solution {
     }
 };
 
+
+
+//////// OPTIMIZED WAY TC:- O(log(m*n)). SC:- O(1)
+
+/*
+    bool searchRowMatrix(vector<vector<int>> &mat, int x) {
+    int rows = mat.size();
+    int cols = mat[0].size();
+
+    int low = 0, high = rows * cols - 1;
+
+    while (low <= high) {
+        int mid = (low + high) / 2;
+
+        // Map 1D index to 2D row and column
+        int midValue = mat[mid / cols][mid % cols];
+
+        if (midValue == x) {
+            return true; // Element found
+        } else if (midValue < x) {
+            low = mid + 1; // Move to the right
+        } else {
+            high = mid - 1; // Move to the left
+        }
+    }
+
+    return false; // Element not found
+}
+
+
+*/
+
 //{ Driver Code Starts.
 int main() {
     int t;
