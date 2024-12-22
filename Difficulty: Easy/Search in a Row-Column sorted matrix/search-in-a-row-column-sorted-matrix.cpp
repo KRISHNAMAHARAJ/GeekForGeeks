@@ -8,9 +8,36 @@ using namespace std;
 class Solution {
   public:
     bool matSearch(vector<vector<int>> &mat, int x) {
+        int rows = mat.size();
+        int cols = mat[0].size();
+    
+    /////////// USing Staircase Search approach  TC:- O(n+m)
+    
+        // Start from the top-right corner
+        int i = 0, j = cols - 1;
+    
+        while (i < rows && j >= 0) {
+            if (mat[i][j] == x) {
+                return true; // Found the element
+            } else if (mat[i][j] > x) {
+                j--; // Move left
+            } else {
+                i++; // Move down
+            }
+        }
+    
+        return false; // Element not found
+    }
+};
+
+
+//////// Using simple naive approach TC:- O(n*m)
+
+/*
+    bool matSearch(vector<vector<int>> &mat, int x) {
         // your code here
         
-        int rows = mat.size();
+        int rows = mat.size();          //// TC:- O(n*m) 
         int cols = mat[0].size();
         
         for(int i =0; i<rows; i++){
@@ -22,7 +49,7 @@ class Solution {
         }
         return false;
     }
-};
+*/
 
 //{ Driver Code Starts.
 int main() {
