@@ -18,8 +18,6 @@ class Solution {
             if (mpp.count(compliment)) {
                 count += mpp[compliment]; 
             }
-        
-        // Add the current element to the map
             mpp[arr[i]]++;
         }
         return count;
@@ -27,6 +25,8 @@ class Solution {
 };
 
 
+
+//////// one test case not passed TLE is coming
 
 /*
     int countPairs(vector<int> &arr, int target) {
