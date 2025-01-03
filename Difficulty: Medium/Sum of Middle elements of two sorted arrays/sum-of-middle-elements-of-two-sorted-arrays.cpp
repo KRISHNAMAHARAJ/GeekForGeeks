@@ -11,7 +11,7 @@ class Solution {
   public:
     int SumofMiddleElements(vector<int> &arr1, vector<int> &arr2) {
         // code here
-        
+                                    //// TC:- O(n1+n2) SC:- O(n1+n2) 
         int n1 = arr1.size();
         int n2 = arr2.size();
         
@@ -47,6 +47,48 @@ class Solution {
         return sum;
     }
 };
+
+
+
+
+
+///////// Using Binary Search TC:- O(logn) ans Sc:- O(1)
+/*
+    int SumofMiddleElements(vector<int>& arr1, vector<int>& arr2) {
+    int n = arr1.size(); // Both arrays have the same size
+
+    // Ensure that arr1 is the smaller array for binary search
+    if (arr1[0] > arr2[0]) {
+        swap(arr1, arr2);
+    }
+
+    int low = 0, high = n;
+    while (low <= high) {
+        int partition1 = (low + high) / 2;
+        int partition2 = n - partition1;
+
+        int maxLeft1 = (partition1 == 0) ? INT_MIN : arr1[partition1 - 1];
+        int minRight1 = (partition1 == n) ? INT_MAX : arr1[partition1];
+
+        int maxLeft2 = (partition2 == 0) ? INT_MIN : arr2[partition2 - 1];
+        int minRight2 = (partition2 == n) ? INT_MAX : arr2[partition2];
+
+        if (maxLeft1 <= minRight2 && maxLeft2 <= minRight1) {
+            // We've found the correct partition
+            return max(maxLeft1, maxLeft2) + min(minRight1, minRight2);
+        } else if (maxLeft1 > minRight2) {
+            high = partition1 - 1; // Move left
+        } else {
+            low = partition1 + 1; // Move right
+        }
+    }
+
+    return -1; // This case won't be reached due to given constraints
+}
+
+*/
+
+
 
 //{ Driver Code Starts.
 //Back-end complete function template in C++
