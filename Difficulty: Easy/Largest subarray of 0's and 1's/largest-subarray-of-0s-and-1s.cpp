@@ -7,30 +7,30 @@ using namespace std;
 class Solution {
   public:
     int maxLen(vector<int> &arr) {
-    unordered_map<int, int> sumIndexMap; // To store the first occurrence of each sum
-    int maxLength = 0;
-    int cumulativeSum = 0;
+        unordered_map<int, int> sumIndexMap; // To store the first occurrence of each sum
+        int maxLength = 0;
+        int cumulativeSum = 0;
 
-    for (int i = 0; i < arr.size(); ++i) {
-        // Convert 0 to -1
-        cumulativeSum += (arr[i] == 0) ? -1 : 1;
+        for (int i = 0; i < arr.size(); ++i) {
+            // Convert 0 to -1
+            cumulativeSum += (arr[i] == 0) ? -1 : 1;
 
-        // If the cumulative sum is 0, the subarray from 0 to i has equal 0s and 1s
-        if (cumulativeSum == 0) {
-            maxLength = i + 1;
+            // If the cumulative sum is 0, the subarray from 0 to i has equal 0s and 1s
+            if (cumulativeSum == 0) {
+                maxLength = i + 1;
+            }
+
+            // If the cumulative sum is seen before, calculate the length of the subarray
+            if (sumIndexMap.find(cumulativeSum) != sumIndexMap.end()) {
+                maxLength = max(maxLength, i - sumIndexMap[cumulativeSum]);
+            } else {
+                // Store the first occurrence of this cumulative sum
+                sumIndexMap[cumulativeSum] = i;
+            }
         }
 
-        // If the cumulative sum is seen before, calculate the length of the subarray
-        if (sumIndexMap.find(cumulativeSum) != sumIndexMap.end()) {
-            maxLength = max(maxLength, i - sumIndexMap[cumulativeSum]);
-        } else {
-            // Store the first occurrence of this cumulative sum
-            sumIndexMap[cumulativeSum] = i;
-        }
+        return maxLength;
     }
-
-    return maxLength;
-}
 };
 
 
