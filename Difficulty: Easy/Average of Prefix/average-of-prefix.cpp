@@ -9,6 +9,24 @@ using namespace std;
 class Solution {
   public:
     vector<int> prefixAvg(vector<int> &arr) {
+        
+        int n = arr.size();
+        int prefixSum = 0;  
+
+        for (int i = 0; i < n; i++) {
+            prefixSum += arr[i];               
+            arr[i] = prefixSum / (i + 1);      
+        }
+
+        return arr;  
+    }
+};
+
+
+
+///////// Using PrefixSum Concept
+/*
+    vector<int> prefixAvg(vector<int> &arr) {
         // code here
         
         int n = arr.size();
@@ -26,7 +44,7 @@ class Solution {
         }
         return result;
     }
-};
+*/
 
 //{ Driver Code Starts.
 int main() {
