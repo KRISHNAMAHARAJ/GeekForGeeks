@@ -53,6 +53,26 @@ class Solution {
     }
 };
 
+
+
+/////////// Using Brute Force  TC:- O(n) and  SC:- O(1)
+/*
+    vector<int> find(vector<int>& arr, int x) {
+        // code here
+        
+        int n = arr.size();
+        int first = -1, last =-1;
+        for(int i=0; i<n; i++){
+            if(arr[i] == x){
+                if(first == -1)  first = i;
+                last = i;
+            }
+        }
+        return {first, last};
+    }
+*/
+
+
 //{ Driver Code Starts.
 
 int main() {
