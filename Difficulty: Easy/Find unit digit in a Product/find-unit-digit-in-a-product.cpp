@@ -8,16 +8,21 @@ public:
     int theLastDigit(int a, int b, int c, int d, int e, int f){
         // code here 
         a = a %10;
-        b = b%4 + 4;
         c = c %10;
-        d = d%4 + 4;
         e = e %10;
+        
+        b = b%4 + 4;
+        d = d%4 + 4;
         f = f%4 + 4;
-        int h = (((int)(pow(a, b))) % 10);
-        int i = (((int)(pow(c, d))) % 10);
-        int k = (((int)(pow(e, f))) % 10);
-        int l = (h*i*k)%10;
-        return l;
+        
+        
+        int x = (((int)(pow(a, b))) % 10);
+        int y = (((int)(pow(c, d))) % 10);
+        int z = (((int)(pow(e, f))) % 10);
+        
+        int result = (x*y*z)%10;
+        
+        return result;
     }
 };
 
