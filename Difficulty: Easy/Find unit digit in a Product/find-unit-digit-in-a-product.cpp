@@ -27,6 +27,7 @@ public:
 };
 
 
+///////// THis aproach has some issue i m not able to detect it. I will find it later.
 
 /*
     int theLastDigit(int a, int b, int c, int d, int e, int f){
