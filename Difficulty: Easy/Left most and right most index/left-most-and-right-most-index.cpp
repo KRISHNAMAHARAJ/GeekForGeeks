@@ -51,63 +51,6 @@ class Solution
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-    pair<long,long> indexes(vector<long long> v, long long x)
-    {
-        // code here
-        int n = v.size();
-    long first = -1, last = -1;
-
-    // Binary search for the first occurrence
-    int low = 0, high = n - 1;
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
-        if (v[mid] == x) {
-            first = mid;
-            high = mid - 1;  // Move left to find earlier occurrence
-        } else if (v[mid] < x) {
-            low = mid + 1;
-        } else {
-            high = mid - 1;
-        }
-    }
-
-    // Binary search for the last occurrence
-    low = 0, high = n - 1;
-    while (low <= high) {
-        int mid = low + (high - low) / 2;
-        if (v[mid] == x) {
-            last = mid;
-            low = mid + 1;  // Move right to find later occurrence
-        } else if (v[mid] < x) {
-            low = mid + 1;
-        } else {
-            high = mid - 1;
-        }
-    }
-
-    if (first == -1) {
-        return {-1, -1};  // Element not found
-    }
-    return {first, last};
-    }
-*/
-
 //{ Driver Code Starts.
 
 int main()
