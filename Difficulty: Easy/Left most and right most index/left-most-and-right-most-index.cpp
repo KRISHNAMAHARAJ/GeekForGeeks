@@ -7,6 +7,66 @@ using namespace std;
 class Solution
 {
     public:
+    pair<long,long> indexes(vector<long long> v, long long x){
+         // code here
+        int n = v.size();
+        
+        long first=-1, last=-1;
+        
+        int left=0, right =n-1;
+        while(left <= right){
+            int mid = left + (right- left)/2;
+            
+            if(v[mid] == x){
+                first = mid;
+                right = mid - 1;
+            }
+            else if(v[mid] < x){
+                left = mid + 1;
+            }
+            else {
+                right = mid - 1;
+            }
+        }
+        
+        
+        left=0, right =n-1;
+        while(left <= right){
+            int mid = left + (right- left)/2;
+            
+            if(v[mid] == x){
+                last = mid;
+                left = mid + 1;
+            }
+            else if(v[mid] < x){
+                left = mid + 1;
+            }
+            else {
+                right = mid - 1;
+            }
+        }
+        
+        return {first, last};
+    }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     pair<long,long> indexes(vector<long long> v, long long x)
     {
         // code here
@@ -46,7 +106,7 @@ class Solution
     }
     return {first, last};
     }
-};
+*/
 
 //{ Driver Code Starts.
 
