@@ -9,20 +9,17 @@ class Solution {
   public:
     int missingNumber(vector<int>& arr) {
         // code here
+        int n = arr.size() +1;
+        int xor1 =0, xor2 =0;
         
-        int xor1=0;
-        int n = arr.size();
-        
-        for(int i=0; i<n; i++) {
+        for(int i=0; i<n-1; i++){
             xor1 ^= arr[i];
-            xor1 ^= (i + 1); 
+            xor2 ^= (i+1);
         }
+        xor2 ^= n;
         
-        xor1 ^= (n + 1);
-        
-        return xor1;
+        return (xor1 ^ xor2);
     }
-    
 };
 
 //{ Driver Code Starts.
