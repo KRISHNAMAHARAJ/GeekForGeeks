@@ -7,44 +7,17 @@ using namespace std;
 class Solution {
   public:
     int search(vector<int>& arr, int key) {
+     
+        int n = arr.size();
         
-    int left = 0, right = arr.size() - 1;
-    
-    while (left <= right) {
-        int mid = (left + right) / 2;
-        
-        // If the key is found, return its index
-        if (arr[mid] == key) {
-            return mid;
-        }
-        
-        // Check if the left part is sorted
-        if (arr[left] <= arr[mid]) {
-            // If key lies within the range [arr[left], arr[mid]], search in left half
-            if (arr[left] <= key && key < arr[mid]) {
-                right = mid - 1;
-            } 
-            // Else search in the right half
-            else {
-                left = mid + 1;
-            }
-        } 
-        // Otherwise, the right part must be sorted
-        else {
-            // If key lies within the range [arr[mid], arr[right]], search in right half
-            if (arr[mid] < key && key <= arr[right]) {
-                left = mid + 1;
-            } 
-            // Else search in the left half
-            else {
-                right = mid - 1;
+        for(int i=0; i<n; i++){
+            if(arr[i] == key){
+                return i;
             }
         }
+        return -1;
+        
     }
-    
-    // If the key is not found, return -1
-    return -1;
-}
 };
 
 //{ Driver Code Starts.
