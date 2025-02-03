@@ -15,8 +15,8 @@ class Solution {
         while(left < right){
             int mid = left + (right - left)/2;
             
-            if(arr[mid] > arr[right]){
-                left = mid+1;
+            if(arr[mid] > arr[right]){ // right side
+                left = mid+1; // move right
             }
             else {
                 right = mid;
@@ -26,6 +26,18 @@ class Solution {
     }
 };
 
+
+///// Using Linear Search TC:- O(n)
+/*
+    int findMin(vector<int>& arr) {
+        // complete the function here
+        int mini = arr[0];
+        for (int i = 1; i < arr.size(); i++) {
+            mini = min(mini, arr[i]);
+        }
+        return mini;
+    }
+*/
 
 //{ Driver Code Starts.
 
