@@ -46,7 +46,7 @@ int Search(vector<int> vec, int K) {
         int mid = low + (high - low) / 2;
         
         if (vec[mid] == K) {
-            return mid;  // Found the target
+            return mid;  
         }
 
         // Determine which half is sorted
