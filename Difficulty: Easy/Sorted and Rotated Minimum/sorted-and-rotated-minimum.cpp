@@ -8,11 +8,13 @@ class Solution {
   public:
     int findMin(vector<int>& arr) {
         // complete the function here
-        int n= arr.size();
-        int left =0, right = n-1;
         
-        while(left < right){
-            int mid= (left + right)/2;
+        int left = 0, right = arr.size() -1;
+        int min=0;
+        
+        while(left <= right){
+            int mid = left + (right - left)/2;
+            
             if(arr[mid] > arr[right]){
                 left = mid+1;
             }
@@ -27,15 +29,6 @@ class Solution {
     }
 };
 
-
-/////// IN O(n) tc ///////
-/*
-    int mini = arr[0];
-    for (int i = 1; i < arr.size(); i++) {
-        mini = min(mini, arr[i]);
-    }
-    return mini;
-*/
 
 //{ Driver Code Starts.
 
