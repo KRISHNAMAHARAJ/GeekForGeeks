@@ -12,20 +12,17 @@ class Solution {
         int left = 0, right = arr.size() -1;
         int min=0;
         
-        while(left <= right){
+        while(left < right){
             int mid = left + (right - left)/2;
             
             if(arr[mid] > arr[right]){
                 left = mid+1;
             }
-            else if(arr[mid] < arr[right]){
+            else {
                 right = mid;
             }
-            else {
-                right--;
-            }
         }
-        return arr[left];
+        return arr[right];
     }
 };
 
